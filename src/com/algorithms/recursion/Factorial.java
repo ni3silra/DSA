@@ -29,8 +29,8 @@ public class Factorial {
 
 	public static void main(String[] args) {
 		Factorial factorial = new Factorial();
-		System.out.println("Recusive Output " + factorial.getFactorialFromRecursion(1000));
-		System.out.println("Iterative Output " + factorial.getFactorialFromIteration(1000));
+		System.out.println("Recusive Output " + factorial.getFactorialFromRecursion(0));
+		System.out.println("Iterative Output " + factorial.getFactorialFromIteration(0));
 	}
 
 }
