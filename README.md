@@ -1,5 +1,5 @@
-# DSA
-#### Basic Data Structure
+# Basic Data Structure
+
 
 **Arrays -** `public final class Arrays<E>`  
 > **Search**:   `public static <E> boolean contains(Object[] array, E element)`  \
@@ -26,7 +26,7 @@
 > **All Keys**: `public Object[] keys()`  
 
 
-#### Basic Algorithms
+#Basic Algorithms
 
 **Recursion** 
 > **Factorial** \
@@ -36,5 +36,6 @@
 > **Bubble** 
 
 **Search** 
-> **Linear Search** 
+> **Linear Search** \
+> **Binary Search** 
 

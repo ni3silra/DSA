@@ -1,5 +1,6 @@
 package com.algorithms.searching;
 
+import com.algorithms.sorting.BubbleSort;
 import com.utilites.Utilites;
 
 public class BinarySearch implements Search {
@@ -13,6 +14,7 @@ public class BinarySearch implements Search {
 
 	@Override
 	public boolean find(Object obj) {
+		array = new BubbleSort(array).sort();
 		if (binarySearch(obj, 0, array.length) != -1)
 			return true;
 		return false;
@@ -34,6 +36,6 @@ public class BinarySearch implements Search {
 		else
 			return binarySearch(obj, midIndex + 1, lastIndex);
 
-	}
+	} // O(log n)
 
 }
