@@ -26,14 +26,14 @@
 > **All Keys**: `public Object[] keys()`  
 
 
-#Basic Algorithms
+# Basic Algorithms
 
 **Recursion** 
 > **Factorial** \
 > **Fibonacci** 
 
 **Sort** 
-> **Bubble** 
+> **Bubble Sort** 
 
 **Search** 
 > **Linear Search** \
