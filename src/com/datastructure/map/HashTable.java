@@ -10,7 +10,7 @@ public class HashTable<K, V> implements Map<K, V> {
 		this.map = new KeyValuePair[50];
 	}
 
-	int getHash(K key) {
+	private int getHash(K key) {
 		int hash = 0;
 		if (key instanceof Number)
 			hash = Integer.parseInt(key.toString()) % map.length;

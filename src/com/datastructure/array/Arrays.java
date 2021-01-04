@@ -1,6 +1,17 @@
 package com.datastructure.array;
 
-public final class Arrays {
+public final class Arrays<E> {
+
+	public static <E> boolean contains(Object[] array, E element) {
+
+		return false;
+	}
+
+	public static Object[] sort(Object[] array) {
+		Object[] tempArray = new Object[array.length];
+
+		return tempArray;
+	}
 
 	public static Object[] delete(Object[] array, int index) {
 		Object[] tempArray = new Object[array.length];
@@ -17,7 +28,7 @@ public final class Arrays {
 				array[counter++] = tempArray[i];
 		}
 		return array;
-	}
+	} // O(n)
 
 	public static String toString(Object[] a) {
 		if (a == null)
