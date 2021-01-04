@@ -1,5 +1,5 @@
 package com.algorithms.searching;
 
 public interface Search {
-	public boolean search(Object o);
+	public boolean find(Object o);
 }

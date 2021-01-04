@@ -12,7 +12,7 @@ public class LinearSearch implements Search {
 	}
 
 	@Override
-	public boolean search(Object o) {
+	public boolean find(Object o) {
 		
 		for (int i = 0; i < array.length; i++)
 			if (Utilites.equals(array[i], o))

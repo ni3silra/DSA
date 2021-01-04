@@ -1,5 +1,5 @@
 # DSA
-#### Basic Data Structure and Algorithm
+#### Basic Data Structure
 
 **Arrays -** `public final class Arrays<E>`  
 > **Search**:   `public static <E> boolean contains(Object[] array, E element)`  \
@@ -24,3 +24,17 @@
 > **Sort**: `public List<E> sort()`  \
 > **Insert**:   `public boolean put(K key, V value)`  \
 > **All Keys**: `public Object[] keys()`  
+
+
+#### Basic Algorithms
+
+**Recursion** 
+> **Factorial** \
+> **Fibonacci** 
+
+**Sort** 
+> **Bubble** 
+
+**Search** 
+> **Linear Search** 
+
