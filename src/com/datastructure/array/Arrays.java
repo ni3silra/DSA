@@ -1,5 +1,7 @@
 package com.datastructure.array;
 
+import com.algorithms.sorting.BubbleSort;
+
 public final class Arrays<E> {
 
 	public static <E> boolean contains(Object[] array, E element) {
@@ -8,9 +10,7 @@ public final class Arrays<E> {
 	}
 
 	public static Object[] sort(Object[] array) {
-		Object[] tempArray = new Object[array.length];
-
-		return tempArray;
+		return new BubbleSort(array).sort();
 	}
 
 	public static Object[] delete(Object[] array, int index) {

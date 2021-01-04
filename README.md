@@ -20,7 +20,7 @@
 ####
 
 **HashTable -** `public class HashTable<K, V> implements Map<K, V>`  
-> **Search**:   `public V get(K key)`  \
+> **Search**:   `public boolean containsKey(K key)`  \
 > **Sort**: `public List<E> sort()`  \
 > **Insert**:   `public boolean put(K key, V value)`  \
 > **All Keys**: `public Object[] keys()`  

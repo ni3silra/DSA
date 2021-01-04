@@ -15,7 +15,7 @@ public interface List<E> {
 
 	void delete(E element) throws Exception;
 
-	List<E> sort();
+	Object[] sort();
 
 	int size();
 

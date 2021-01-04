@@ -51,9 +51,8 @@ public class ArrayList<E> implements List<E> {
 	}
 
 	@Override
-	public List<E> sort() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object[] sort() {
+		return Arrays.sort(list);
 	}
 
 	@Override
