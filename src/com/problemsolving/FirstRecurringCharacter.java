@@ -1,4 +1,4 @@
-package com.datastructure.ps;
+package com.problemsolving;
 
 import com.datastructure.map.*;
 
