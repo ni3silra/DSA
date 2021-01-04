@@ -1,5 +1,7 @@
 package com.datastructure.list;
 
+import java.util.Iterator;
+
 import com.datastructure.array.Arrays;
 
 public class ArrayList<E> implements List<E> {
@@ -93,6 +95,12 @@ public class ArrayList<E> implements List<E> {
 				outList[counter++] = list[i];
 		}
 		return outList;
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

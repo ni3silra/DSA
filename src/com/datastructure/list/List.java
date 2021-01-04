@@ -1,6 +1,6 @@
 package com.datastructure.list;
 
-public interface List<E> {
+public interface List<E> extends Iterable<E>{
 
 	int INITIAL_SIZE = 10;
 	int VARIABLE_SIZE = INITIAL_SIZE * 2;

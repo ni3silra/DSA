@@ -2,10 +2,10 @@ package com.problemsolving;
 
 import com.datastructure.map.*;
 
-public class FirstRecurringCharacter {
+public class FirstRecurringElement {
 	private int[] array;
 
-	FirstRecurringCharacter(int[] array) {
+	FirstRecurringElement(int[] array) {
 		this.array = array;
 	}
 
@@ -16,7 +16,7 @@ public class FirstRecurringCharacter {
 			for (int j = i + 1; j < array.length - 1; j++) {
 				if (array[i] == array[j])
 					counter++;
-				if (counter == 2)
+				if (counter > 1)
 					return array[i];
 			}
 		}
@@ -37,13 +37,13 @@ public class FirstRecurringCharacter {
 	} // TC = O(n) , SC = O(n)
 
 	public static void main(String[] args) {
-		FirstRecurringCharacter firstRecurringCharacter = new FirstRecurringCharacter(
+		FirstRecurringElement firstRecurringElement = new FirstRecurringElement(
 				new int[] { 2, 1, 6, 6, 7, 3, 2, 2 });
 
 		System.out.println(
-				"First Recurring Character (BruteForce) " + firstRecurringCharacter.getRepeatedNumberByBruteForce());
+				"First Recurring Character (BruteForce) " + firstRecurringElement.getRepeatedNumberByBruteForce());
 		System.out.println(
-				"First Recurring Character (HashMap) :- " + firstRecurringCharacter.getRepeatedNumberByHashMap());
+				"First Recurring Character (HashMap) :- " + firstRecurringElement.getRepeatedNumberByHashMap());
 	}
 
 }
