@@ -2,8 +2,8 @@ package com.datastructure.list;
 
 public interface List<E> {
 
-	int INITIAL_SIZE = 5;
-	int VARIABLE_SIZE = 2;
+	int INITIAL_SIZE = 10;
+	int VARIABLE_SIZE = INITIAL_SIZE * 2;
 
 	E get(int index);
 
@@ -16,6 +16,8 @@ public interface List<E> {
 	void delete(E element) throws Exception;
 
 	Object[] sort();
+
+	public boolean contains(E element);
 
 	int size();
 

@@ -74,16 +74,25 @@ public class ArrayList<E> implements List<E> {
 		list = Arrays.delete(list, getIndex(element));
 	}
 
+	public boolean contains(E element) {
+
+		return Arrays.contains(nullFilterList(), element);
+	}
+
 	@Override
 	public String toString() {
+
+		return Arrays.toString(nullFilterList());
+	}
+
+	private Object[] nullFilterList() {
 		Object[] outList = new Object[size()];
 		int counter = 0;
 		for (int i = 0; i < list.length; i++) {
 			if (list[i] != null)
 				outList[counter++] = list[i];
 		}
-
-		return Arrays.toString(outList);
+		return outList;
 	}
 
 }

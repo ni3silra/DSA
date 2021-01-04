@@ -1,12 +1,12 @@
 package com.datastructure.array;
 
+import com.algorithms.searching.LinearSearch;
 import com.algorithms.sorting.BubbleSort;
 
 public final class Arrays<E> {
 
 	public static <E> boolean contains(Object[] array, E element) {
-
-		return false;
+		return new LinearSearch(array).search(element);
 	}
 
 	public static Object[] sort(Object[] array) {
