@@ -12,11 +12,11 @@ public class LinkedList<E> implements List<E> {
 		this.node = Node.createNode(null);
 	}
 
-//	public LinkedList(E element) {
-//		super();
-//		this.node = Node.createNode(null);
-//		add(element);
-//	}
+	public LinkedList(E element) {
+		super();
+		this.node = Node.createNode(null);
+		add(element);
+	}
 
 	@Override
 	public Iterator<E> iterator() {
@@ -40,19 +40,32 @@ public class LinkedList<E> implements List<E> {
 		return null;
 	}
 
+	public Node<E> getNode(int index) {
+		int initial = 0;
+		Node<E> currentNode = this.node;
+		while (initial < size) {
+
+			if (initial == index)
+				return currentNode;
+
+			currentNode = currentNode.getNextNode();
+			initial++;
+		}
+		return null;
+	}
+
 	@Override
 	public int getIndex(E element) throws Exception {
 		int index = 0;
 		Node<E> currentNode = this.node;
 
-		while (currentNode.getNextNode() != null) {
+		while (currentNode != null) {
 			if (element.equals(currentNode.getValue()))
 				return index;
 			currentNode = currentNode.getNextNode();
 			index++;
 		}
-
-		return index;
+		return -1;
 	}
 
 	@Override
@@ -71,15 +84,33 @@ public class LinkedList<E> implements List<E> {
 		size++;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void delete(int index) {
-		// TODO Auto-generated method stub
 
+		try {
+			delete((E) getNode(index).getValue());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void delete(E element) throws Exception {
-		// TODO Auto-generated method stub
+
+		int deletionIndex = getIndex(element);
+
+		if (deletionIndex == 0)
+			this.node = getNode(1);
+		else if (deletionIndex == size - 1)
+			getNode(deletionIndex - 1).setNextNode(null);
+		else
+			getNode(deletionIndex - 1).setNextNode(getNode(deletionIndex + 1));
+
+		// getNode(deletionIndex).setValue(null);
+
+		size--;
 
 	}
 
@@ -91,7 +122,14 @@ public class LinkedList<E> implements List<E> {
 
 	@Override
 	public boolean contains(E element) {
-		// TODO Auto-generated method stub
+
+		try {
+			if (getIndex(element) != -1)
+				return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		return false;
 	}
 
