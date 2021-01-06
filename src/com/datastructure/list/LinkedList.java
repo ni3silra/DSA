@@ -24,9 +24,19 @@ public class LinkedList<E> implements List<E> {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public E get(int index) {
+		int initial = 0;
+		Node<E> currentNode = this.node;
+		while (initial < size) {
 
+			if (initial == index)
+				return (E) currentNode.getValue();
+
+			currentNode = currentNode.getNextNode();
+			initial++;
+		}
 		return null;
 	}
 
