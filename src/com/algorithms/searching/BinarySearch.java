@@ -15,7 +15,9 @@ public class BinarySearch implements Search {
 	@Override
 	public boolean find(Object obj) {
 		array = new BubbleSort(array).sort();
-		if (binarySearch(obj, 0, array.length) != -1)
+		int index = binarySearch(obj, 0, array.length - 1);
+
+		if (index != -1)
 			return true;
 		return false;
 	}
@@ -31,11 +33,10 @@ public class BinarySearch implements Search {
 
 		if (decider == 0)
 			return midIndex;
-		else if (decider == -1)
+		else if (decider == 1)
 			return binarySearch(obj, startIndex, midIndex - 1);
 		else
 			return binarySearch(obj, midIndex + 1, lastIndex);
-
 	} // O(log n)
 
 }

@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Anagrams {
 
 	static int makeAnagram(String a, String b) {
+
 		int[] alphabets = new int[26];
+
 		int diff = 0;
 
 		for (char c : a.toCharArray())
