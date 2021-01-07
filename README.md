@@ -19,6 +19,16 @@
 
 ####
 
+**SinglyLinkedList -** `public class SinglyLinkedList<E> implements LinkedList<E>` 
+> **Find**: `public E get(int index)`  \
+> **Size**: `public int size()`  \
+> **Search**:   `public static <E> boolean contains(Object[] array, E element)`  \
+> **Insert**:   `public void insert(E element)`  \
+> **Delete**: `public void remove(int index) || public void remove(E element) throws Exception`  \
+> **toString**: `public String toString()`  
+
+####
+
 **HashTable -** `public class HashTable<K, V> implements Map<K, V>`  
 > **Search**:   `public boolean containsKey(K key)`  \
 > **Sort**: `public List<E> sort()`  \
