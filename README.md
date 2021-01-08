@@ -35,6 +35,21 @@
 > **Insert**:   `public boolean put(K key, V value)`  \
 > **All Keys**: `public Object[] keys()`  
 
+####
+
+**Stack -** `public class StackByLinkedList<E> implements Stack<E>`  
+> **LookUp**:   `public boolean lookUp(E element)`  \
+> **Push**: `public void push(E element)`  \
+> **Pop**:   `public void pop()`  \
+> **Peek**: `public E peek()`  
+
+####
+
+**Queue -** `public class QueueByLinkedList<E> implements Queue<E>`  
+> **LookUp**:   `public boolean lookUp(E element)`  \
+> **Enqueue**: `public void enqueue(E element)`  \
+> **Dequeue**:   `public void dequeue()`  \
+> **Peek**: `public E peek()` 
 
 # Basic Algorithms
 
