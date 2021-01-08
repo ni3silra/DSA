@@ -22,7 +22,7 @@
 **SinglyLinkedList -** `public class SinglyLinkedList<E> implements LinkedList<E>` 
 > **Find**: `public E get(int index)`  \
 > **Size**: `public int size()`  \
-> **Search**:   `public static <E> boolean contains(Object[] array, E element)`  \
+> **Search**:   `public static <E> boolean contains(E element)`  \
 > **Insert**:   `public void insert(E element)`  \
 > **Delete**: `public void remove(int index) || public void remove(E element) throws Exception`  \
 > **toString**: `public String toString()`  
