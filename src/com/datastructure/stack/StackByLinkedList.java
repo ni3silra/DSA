@@ -19,7 +19,6 @@ public class StackByLinkedList<E> implements Stack<E> {
 	@Override
 	public void pop() {
 		try {
-			System.out.println(list.size());
 			list.remove(list.size() - 1);
 		} catch (Exception e) {
 			e.printStackTrace();
