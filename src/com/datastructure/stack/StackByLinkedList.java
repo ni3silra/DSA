@@ -1,13 +1,12 @@
 package com.datastructure.stack;
 
-import com.datastructure.list.LinkedList;
-import com.datastructure.list.SinglyLinkedList;
+import com.datastructure.list.*;
 
-public class StackByLnkedList<E> implements Stack<E> {
+public class StackByLinkedList<E> implements Stack<E> {
 
 	private LinkedList<E> list;
 
-	public StackByLnkedList() {
+	public StackByLinkedList() {
 		super();
 		list = new SinglyLinkedList<>();
 	}
@@ -20,7 +19,8 @@ public class StackByLnkedList<E> implements Stack<E> {
 	@Override
 	public void pop() {
 		try {
-			list.remove(list.get(list.size() - 1));
+			System.out.println(list.size());
+			list.remove(list.size() - 1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

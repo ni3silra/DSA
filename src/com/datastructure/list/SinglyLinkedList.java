@@ -3,7 +3,7 @@ package com.datastructure.list;
 public class SinglyLinkedList<E> implements LinkedList<E> {
 
 	Node<E> node;
-	private static int size = 0;
+	private int size = 0;
 
 	public SinglyLinkedList() {
 		super();

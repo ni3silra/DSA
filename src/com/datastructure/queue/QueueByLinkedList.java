@@ -1,7 +1,6 @@
 package com.datastructure.queue;
 
-import com.datastructure.list.LinkedList;
-import com.datastructure.list.SinglyLinkedList;
+import com.datastructure.list.*;
 
 public class QueueByLinkedList<E> implements Queue<E> {
 
@@ -25,7 +24,7 @@ public class QueueByLinkedList<E> implements Queue<E> {
 	@Override
 	public void dequeue() {
 		try {
-			list.remove(list.get(0));
+			list.remove(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -35,5 +34,4 @@ public class QueueByLinkedList<E> implements Queue<E> {
 	public E peek() {
 		return list.get(0);
 	}
-
 }
