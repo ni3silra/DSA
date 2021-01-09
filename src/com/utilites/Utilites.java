@@ -3,7 +3,10 @@ package com.utilites;
 public class Utilites {
 
 	public static int compareTo(Object o1, Object o2) {
-	
+
+		if (o1 == null || o2 == null)
+			return -2;
+
 		try {
 			Integer obj1 = Integer.parseInt(o1.toString());
 			Integer obj2 = Integer.parseInt(o2.toString());
@@ -28,6 +31,9 @@ public class Utilites {
 	}
 
 	public static boolean equals(Object o1, Object o2) {
+
+		if (o1 == null || o2 == null)
+			return false;
 
 		try {
 			Integer obj1 = Integer.parseInt(o1.toString());
