@@ -10,8 +10,8 @@ import java.util.*;
 public class LittlePonnyandMobilePhones {
 
 	public static void main(String[] args) {
-		int[] A = { 3, 4, 4, 6 };
-		int[] B = { 20, 4, 10, 2 };
+		int[] A = {23, 36, 58, 59};
+		int[] B = { 3, 207, 62, 654, 939, 680, 760 };
 		ArrayList<Integer> aList = new ArrayList<>();
 		ArrayList<Integer> bList = new ArrayList<>();
 
@@ -47,7 +47,34 @@ public class LittlePonnyandMobilePhones {
 
 	public ArrayList<Integer> betterSolve(ArrayList<Integer> A, ArrayList<Integer> B) {
 		ArrayList<Integer> list = new ArrayList<>();
+		ArrayList<Integer> listA = new ArrayList<>();
+		int acquiredMoney = 0;
+
+		for (int i = 0; i < A.size(); i++) {
+			acquiredMoney += A.get(i);
+			listA.add(acquiredMoney);
+		}
+
+	
+		for (int i = 0; i < B.size(); i++) {
+			list.add(findUpperBund(listA, B.get(i)));
+		}
+
 		return list;
+	}
+
+	public int findUpperBund(ArrayList<Integer> B, int sum) {
+		int l = -1;
+		int r = B.size();
+
+		while (l + 1 < r) {
+			int m = (l + r) >>> 1;
+			if (B.get(m) <= sum)
+				l = m;
+			else
+				r = m;
+		}
+		return l + 1;
 	}
 
 }
