@@ -7,35 +7,34 @@ public class AlternatingCharacters {
 	// Complete the alternatingCharacters function below.
 	static int alternatingCharacters(String s) {
 		// To do
-		char charA = 'A';
-		char charB = 'B';
-		char[] array = s.toCharArray();
-		int diff=0;
+		String newStringY = s.replace("AB", "Y");
+		String newStringZ = s.replace("BA", "Z");
 
-		for (int i = 1; i < array.length; i++) {
-			if(charA ==array[i-1] && charB == array[i])
-				;
-			else
-				diff++;
-				
-		}
+		int countY = 0;
+		int countZ = 0;
 
-		return 0; // to do 
+		for (char c : newStringY.toCharArray())
+			if (c == 'Y')
+				countY++;
+
+		for (char c : newStringZ.toCharArray())
+			if (c == 'Z')
+				countZ++;
+
+		if (countY == 0 && countZ == 0)
+			return s.length() - 1;
+		else if (countY < countZ)
+			return newStringZ.length() - countZ;
+		else if (countY == countZ)
+			return newStringZ.length() - countZ - 1;
+		else
+			return newStringY.length() - countY;
+
 	}
-
-	private static final Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
-		int q = scanner.nextInt();
-		scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-
-		for (int qItr = 0; qItr < q; qItr++) {
-			String s = scanner.nextLine();
-			int result = alternatingCharacters(s);
-			System.out.println(String.valueOf(result));
-		}
-
-		scanner.close();
+		int result = alternatingCharacters("BBBBB");
+		System.out.println(String.valueOf(result));
 	}
 }
