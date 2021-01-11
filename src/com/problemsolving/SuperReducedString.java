@@ -14,7 +14,7 @@ public class SuperReducedString {
 				str = str.substring(0, i - 1) + str.substring(i + 1);
 				i = 0;
 			}
-		}
+		}	
 
 		if (str.length() == 0)
 			return "Empty String";
