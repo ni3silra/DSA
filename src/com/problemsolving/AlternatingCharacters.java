@@ -1,7 +1,5 @@
 package com.problemsolving;
 
-import java.util.Scanner;
-
 public class AlternatingCharacters {
 
 	// Complete the alternatingCharacters function below.
