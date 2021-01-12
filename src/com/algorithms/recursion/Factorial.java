@@ -1,6 +1,7 @@
 package com.algorithms.recursion;
 
 public class Factorial {
+	static int calculations = 0;
 
 	long getFactorialFromRecursion(int number) {
 
@@ -10,6 +11,8 @@ public class Factorial {
 		}
 		if (number == 0)
 			return 1;
+
+		calculations++;
 		return number * getFactorialFromRecursion(--number);
 	} // O(n)
 
@@ -29,8 +32,9 @@ public class Factorial {
 
 	public static void main(String[] args) {
 		Factorial factorial = new Factorial();
-		System.out.println("Recusive Output " + factorial.getFactorialFromRecursion(0));
+		System.out.println("Recusive Output  " + factorial.getFactorialFromRecursion(50));
 		System.out.println("Iterative Output " + factorial.getFactorialFromIteration(0));
+		System.out.println("Calcualtions " + calculations);
 	}
 
 }
