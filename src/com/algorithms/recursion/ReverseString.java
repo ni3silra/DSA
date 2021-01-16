@@ -2,9 +2,11 @@ package com.algorithms.recursion;
 
 public class ReverseString {
 
+	public static final String EM = "";
+
 	String reverseStringByRecursion(String string) {
 
-		if (string.equals(""))
+		if (string.equals(EM))
 			return string;
 		else
 			return reverseStringByRecursion(string.substring(1)) + string.charAt(0);
