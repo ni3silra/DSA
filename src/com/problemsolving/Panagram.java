@@ -5,7 +5,7 @@ public class Panagram {
 	public static final String PANAGRAM = "pangram";
 	public static final String NOT_PANAGRAM = "not pangram";
 
-	public static String p1 = "We promptly judged antique ivory buckles for the net prize";
+	public static String p1 = "We promptly judged antique ivory buckles for the next prize";
 
 	public static void main(String[] args) {
 		System.out.println(pangrams(p1));
