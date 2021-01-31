@@ -28,9 +28,4 @@ public class CountTotalSetBits {
 		return cnt % 1000000007;
 	}
 
-	static int countSetBitsUtil(int x) {
-		if (x <= 0)
-			return 0;
-		return (x % 2 == 0 ? 0 : 1) + countSetBitsUtil(x / 2);
-	}
 }
