@@ -1,5 +1,6 @@
 package com.problemsolving.arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum {
@@ -36,5 +37,34 @@ public class TwoSum {
 
 		return reqArray;
 	} // O(n)
+
+	public boolean twoSum2(int[] arr, int k) {
+		Arrays.sort(arr);
+		for (int i = 0; i < arr.length; i++) {
+			int siblingIndex = Arrays.binarySearch(arr, k - arr[i]);
+			if (siblingIndex >= 0) {
+				if (siblingIndex != i || (i > 0 && arr[i - 1] == arr[i])
+						|| (i < arr.length - 1 && arr[i + 1] == arr[i])) {
+					return true;
+				}
+			}
+		}
+		return false;
+	} // O( nlogn )
+
+	public boolean twoSum3(int[] arr, int k) {
+		Arrays.sort(arr);
+		int lhs = 0, rhs = arr.length - 1;
+		while (lhs < rhs) {
+			int sum = arr[lhs] + arr[rhs];
+			if (sum == k)
+				return true;
+			else if (sum < k)
+				lhs++;
+			else
+				rhs--;
+		}
+		return false;
+	} // O( nlogn )
 
 }
