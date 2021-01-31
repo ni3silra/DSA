@@ -7,12 +7,27 @@ public class BinarySum {
 	}
 
 	public String addBinary(String A, String B) {
-		StringBuffer sb = new StringBuffer();
 
-		for (int i : toBinary(toDecimal(Long.parseLong(A)) + toDecimal(Long.parseLong(B))))
-			sb.append(i);
+		String result = "";
 
-		return sb.toString();
+		int s = 0;
+
+		int i = A.length() - 1, j = B.length() - 1;
+
+		while (i >= 0 || j >= 0 || s == 1) {
+
+			s += ((i >= 0) ? A.charAt(i) - '0' : 0);
+			s += ((j >= 0) ? B.charAt(j) - '0' : 0);
+
+			result = (char) (s % 2 + '0') + result;
+
+			s /= 2;
+
+			i--;
+			j--;
+		}
+
+		return result;
 	}
 
 	public int[] toBinary(long decimal) {
