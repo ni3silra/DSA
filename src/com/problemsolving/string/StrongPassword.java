@@ -1,4 +1,4 @@
-package com.problemsolving;
+package com.problemsolving.string;
 
 public class StrongPassword {
 
@@ -18,45 +18,45 @@ public class StrongPassword {
 		int sumuc = 0;
 		int sumsc = 0;
 
+		int newout = 0;
+
+		if (password.length() < 6)
+			newout = 6 - password.length();
+
 		for (char c : password.toCharArray()) {
-			
+
 			if (sumNum != 0 && sumlc != 0 && sumuc != 0 && sumsc != 0)
 				break;
-			
+
 			if (sumNum == 0)
 				for (char num : numbers.toCharArray())
 					if (c == num) {
 						sumNum++;
 						break;
 					}
-			
+
 			if (sumlc == 0)
 				for (char lc : lower_case.toCharArray())
 					if (c == lc) {
 						sumlc++;
 						break;
 					}
-			
+
 			if (sumuc == 0)
 				for (char uc : upper_case.toCharArray())
 					if (c == uc) {
 						sumuc++;
 						break;
 					}
-			
+
 			if (sumsc == 0)
 				for (char sc : special_characters.toCharArray())
 					if (c == sc) {
 						sumsc++;
 						break;
 					}
-			
+
 		}
-
-		int newout = 0;
-
-		if (password.length() < 6)
-			newout = 6 - password.length();
 
 		int out = 0;
 

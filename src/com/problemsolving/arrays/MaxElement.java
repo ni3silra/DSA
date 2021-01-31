@@ -3,7 +3,7 @@
  * Little Ponny is given an array, A, of N integers. In a particular operation, he can set any element of the array equal to -1.
  * He wants your help for finding out the minimum number of operations required such that the maximum element of the resulting array is B. If it is not possible then return -1.
  */
-package com.problemsolving;
+package com.problemsolving.arrays;
 
 public class MaxElement {
 

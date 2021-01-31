@@ -2,7 +2,7 @@
  * How to find the missing number in integer array of 1 to 100?
  */
 
-package com.problemsolving;
+package com.problemsolving.arrays;
 
 public class MissingNumber {
 

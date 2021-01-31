@@ -2,7 +2,7 @@
  * Given an array of integers A, find and return the minimum elements to be removed such that in the resulting array the sum of any two adjacent values is even.
  */
 
-package com.problemsolving;
+package com.problemsolving.arrays;
 
 public class AdjacentValueSumIsEven {
 

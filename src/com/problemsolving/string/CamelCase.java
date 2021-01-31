@@ -1,4 +1,4 @@
-package com.problemsolving;
+package com.problemsolving.string;
 
 public class CamelCase {
 

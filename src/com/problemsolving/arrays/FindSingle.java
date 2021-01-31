@@ -1,4 +1,4 @@
-package com.problemsolving;
+package com.problemsolving.arrays;
 
 public class FindSingle {
 
