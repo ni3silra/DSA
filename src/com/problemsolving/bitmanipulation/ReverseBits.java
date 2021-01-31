@@ -1,9 +1,9 @@
 package com.problemsolving.bitmanipulation;
 
-public class ReserveBits {
+public class ReverseBits {
 
 	public static void main(String[] args) {
-		System.out.println(new ReserveBits().reverseBits(2));
+		System.out.println(new ReverseBits().reverseBits(2));
 	}
 
 	public long reverseBits(long n) {
