@@ -9,7 +9,6 @@ public class TwoSum {
 
 		for (int i : new TwoSum().twoSum1(new int[] { 2, 4, 11, 6 }, 8))
 			System.out.println(i);
-
 	}
 
 	public int[] twoSum0(int[] nums, int target) {
@@ -53,7 +52,7 @@ public class TwoSum {
 	} // O( nlogn )
 
 	public boolean twoSum3(int[] arr, int k) {
-		Arrays.sort(arr);
+		Arrays.sort(arr); // if this can be done in O(1)
 		int lhs = 0, rhs = arr.length - 1;
 		while (lhs < rhs) {
 			int sum = arr[lhs] + arr[rhs];
@@ -65,6 +64,6 @@ public class TwoSum {
 				rhs--;
 		}
 		return false;
-	} // O( nlogn )
+	} // O( logn )
 
 }
