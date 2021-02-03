@@ -1,32 +1,35 @@
 package com.problemsolving.arrays;
 
+import java.util.ArrayList;
+
 public class OddEvenSubsequences {
 
 	public static void main(String[] args) {
-		System.out.println(new OddEvenSubsequences().solve(new int[] { 16, 19, 13, 43, 21, 47, 20 }));
+		int[] a = { 2, 2, 2, 2, 2, 2 }; // 3
+		int[] b = { 10, 9, 34, 14, 28, 25, 1, 18, 35, 7, 40 }; // 7
+		ArrayList<Integer> A = new ArrayList<>();
+		for (int i : a)
+			A.add(i);
+
+		System.out.println(new OddEvenSubsequences().solve(A));
+
 	}
 
-	public int solve(int[] A) {
+	public int solve(ArrayList<Integer> A) {
 		int maxNum = 0;
-		int countEven = 0;
-		int countOdd = 0;
 
-		for (int i : A)
-			if (i % 2 == 0)
-				countEven++;
-			else
-				countOdd++;
+		for (int i = 1; i < A.size(); i++) {
 
-		maxNum = countEven < countOdd ? countEven : countOdd;
+			if (A.get(i) % 2 == 0 && A.get(i - 1) % 2 != 0) {
+				maxNum++;
+			} else if (A.get(i) % 2 != 0 && A.get(i - 1) % 2 == 0) {
+				maxNum++;
+			}
 
-		if (countEven == 0 || countOdd == 0)
-			return 1;
-		else if (A[0] % 2 == 0 && countEven < countOdd)
-			return maxNum * 2;
-		else if (A[0] % 2 != 0 && countOdd < countEven)
-			return maxNum * 2;
-		else
-			return maxNum * 2 - 1;
+		}
+
+		return maxNum + 1;
+
 	}
 
 }
