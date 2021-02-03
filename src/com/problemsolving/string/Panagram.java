@@ -12,15 +12,13 @@ public class Panagram {
 	}
 
 	static String pangrams(String s) {
-		int[] allChar = new int[27];
-
-		allChar[0] = 1;
-
+		int[] allChar = new int[26];
+		
 		for (char c : s.toCharArray())
 			if (c >= 65 && c <= 90)
-				allChar[c - 64] = 1;
+				allChar[c - 65] = 1;
 			else if (c >= 97 && c <= 122)
-				allChar[c - 96] = 1;
+				allChar[c - 97] = 1;
 
 		for (int i : allChar)
 			if (i == 0)

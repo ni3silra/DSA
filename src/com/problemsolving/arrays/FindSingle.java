@@ -3,9 +3,8 @@ package com.problemsolving.arrays;
 public class FindSingle {
 
 	public static void main(String[] args) {
-		// System.out.println(new FindSingle().singleNumber(new int[] { 1, 2, 2, 3, 1
-		// }));
-		System.out.println(new FindSingle().singleNumber2(new int[] { 1, 2, 1, 1 }));
+		System.out.println(new FindSingle().singleNumber(new int[] { 1, 2, 2, 4, 1 }));
+		System.out.println(new FindSingle().singleNumber2(new int[] { 1, 2, 1, 1, 3, 2, 2 }));
 
 	}
 
