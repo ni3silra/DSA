@@ -14,29 +14,60 @@ public class RotationGame {
 
 	public static void main(String[] args) {
 
-		int testCases = scanner.nextInt();
+		int testCases = Integer.parseInt(scanner.nextLine());
 
 		for (int cases = 0; cases < testCases; cases++) {
 
 			String input[] = scanner.nextLine().split(" ");
 
-			int[] array = new int[input.length];
-			int i = 0;
+			ArrayList<Integer> list = new ArrayList<>();
 
 			for (String s : input) {
-				array[i++] = Integer.parseInt(s);
+				list.add(Integer.parseInt(s));
 			}
 
-			int shiftNum = scanner.nextInt();
+			int shiftNum = Integer.parseInt(scanner.nextLine());
 
-			for (int output : new RotationGame().getRotatedArray(array, shiftNum))
+			for (int output : new RotationGame().rightRotate(list, shiftNum))
 				System.out.println(output);
 		}
 
 	}
 
-	private int[] getRotatedArray(int[] array, int shiftNum) {
-		return null;
+	private ArrayList<Integer> rightRotate(ArrayList<Integer> A, int rotation) {
+		A.remove(0);
+		reverse(A);
+
+		int partitionNum = rotation % A.size();
+
+		ArrayList<Integer> part1 = new ArrayList<>();
+		ArrayList<Integer> part2 = new ArrayList<>();
+
+		for (int i = 0; i < partitionNum; i++)
+			part1.add(A.get(i));
+
+		for (int i = partitionNum; i < A.size(); i++)
+			part2.add(A.get(i));
+
+		reverse(part1);
+		reverse(part2);
+
+		reverse(A);
+
+		part1.addAll(part2);
+
+		return part1;
+	}
+
+	private void reverse(ArrayList<Integer> list) {
+		for (int i = 0; i < list.size() / 2; i++)
+			swap(list, i, list.size() - i - 1);
+	}
+
+	private void swap(ArrayList<Integer> list, int index1, int index2) {
+		int temp = list.get(index1);
+		list.set(index1, list.get(index2));
+		list.set(index2, temp);
 	}
 
 }
