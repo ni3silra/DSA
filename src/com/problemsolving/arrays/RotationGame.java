@@ -1,6 +1,6 @@
 package com.problemsolving.arrays;
 
-import org.jetbrains.annotations.NotNull;
+//import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -66,7 +66,7 @@ public class RotationGame {
 			swap(list, i, list.size() - i - 1);
 	}
 
-	private void swap(@NotNull ArrayList<Integer> list, int index1, int index2) {
+	private void swap(ArrayList<Integer> list, int index1, int index2) {
 		int temp = list.get(index1);
 		list.set(index1, list.get(index2));
 		list.set(index2, temp);
