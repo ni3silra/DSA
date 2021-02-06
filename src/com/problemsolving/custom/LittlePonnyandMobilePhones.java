@@ -3,7 +3,7 @@
  * You are given an array A of size N. denoting the size of prices of different models. The array is sorted based on prices in increasing order. You are given another array B of size Q denoting the queries. In i'th query, you need to tell the maximum distinct models of mobile phones he can buy with B[i] money.
  */
 
-package com.problemsolving;
+package com.problemsolving.custom;
 
 import java.util.*;
 
