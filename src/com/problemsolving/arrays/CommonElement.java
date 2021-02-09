@@ -24,11 +24,27 @@ public class CommonElement {
 	}
 
 	public ArrayList<Integer> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
-
 		A.retainAll(B);
 		B.retainAll(A);
 		A.retainAll(B);
 		return A.size() > B.size() ? B : A;
+	}
+
+	static int gemstones(String[] arr) {
+		int count = 0;
+		boolean flag = true;
+		for (int c : arr[0].toCharArray()) {
+			for (int i = 0; i < arr.length; i++) {
+				if (!arr[i].contains(c+"")) {
+					flag = false;
+					break;
+				}
+			}
+			if (flag) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 }

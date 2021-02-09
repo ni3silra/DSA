@@ -38,14 +38,14 @@ public class AddOneToNumber {
 			ans.set(i, digit % 10);
 
 		}
-
+		//
 		if (isCarryAvailable) {
 			ans.add(0);
 			ans.set(0, 1);
 			for (int i = 1; i < ans.size() - 1; i++) {
 				ans.set(i, ans.get(i + 1));
 			}
-		} else {
+		} else {  
 			for (int i = 0; i < ans.size(); i++) {
 				if (ans.get(0) == 0)
 					ans.remove(0);

@@ -27,7 +27,6 @@ public class MaxEvenSum {
 					sum -= A[i];
 					smallestOdd = A[i];
 				}
-
 		}
 
 		return sum;
