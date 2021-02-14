@@ -29,4 +29,9 @@ public class KeyValuePair<K, V> {
 		return this;
 	}
 
+	@Override
+	public String toString() {
+		return "[key=" + key + ", value=" + value + "]";
+	}
+
 }
