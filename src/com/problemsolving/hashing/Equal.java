@@ -57,4 +57,10 @@ class Pair {
 		this.first = first;
 		this.second = second;
 	}
+
+	@Override
+	public String toString() {
+		return "[F=" + first + ", S=" + second + "]";
+	}
+
 }

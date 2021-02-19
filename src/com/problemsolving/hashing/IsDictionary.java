@@ -10,23 +10,31 @@ public class IsDictionary {
 
 	}
 
-	public int solve(ArrayList<String> A, String B) {
+	public int solve(String[] A, String B) {
 
-		List<StringChar> list = new ArrayList<>();
-
-		String previousString = A.get(0);
-
-		for (int i = 1; i < A.size(); i++) {
-			String latestString = A.get(i);
-			if (previousString.charAt(0) != latestString.charAt(0)) {
-				list.add(new StringChar(previousString.charAt(0)));
+		for (int i = 1; i < A.length; i++) {
+			char[] word1array = A[i - 1].toCharArray(), word2array = A[i].toCharArray();
+			int w1 = 0, w2 = 0;
+			while (w1 < word1array.length || w2 < word2array.length) {
+				try {
+					if (B.indexOf(word1array[w1]) > B.indexOf(word2array[w2]))
+						return 0;
+					else if (B.indexOf(word1array[w1]) < B.indexOf(word2array[w2])) {
+						break;
+					} else if (B.indexOf(word1array[w1]) == B.indexOf(word2array[w2])) {
+						w1++;
+						w2++;
+					}
+				} catch (ArrayIndexOutOfBoundsException e) {
+					if (w1 == word1array.length)
+						break;
+					else
+						return 0;
+				}
 			}
-			previousString = latestString;
 		}
-
-		return 0;
+		return 1;
 	}
-
 }
 
 class StringChar {
