@@ -1,6 +1,6 @@
 package com.problemsolving.arrays;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class ContiguousArray {
 
@@ -11,20 +11,44 @@ public class ContiguousArray {
 		for (int i : new int[] { 1, 0, 1, 0, 1 })
 			A.add(i);
 
-		//System.out.println(new ContiguousArray().solve(A));
+		// System.out.println(new ContiguousArray().solve(A));
 
 		String s = "abc";
-		System.out.println(getAllPermutation(s, "", new ArrayList<String>()).toString());
-		System.out.println(new ContiguousArray().solve("abc","abcbacabc"));
+//		System.out.println(getAllPermutation(s, "", new ArrayList<String>()).toString());
+//		System.out.println(new ContiguousArray().solve("abc", "abcbacabc"));
+		System.out.println(new ContiguousArray().solve(new int[] { 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1 }));
+
 	}
 
-	public int solve(ArrayList<Integer> A) {
+	public int solve(int[] A) {
+		int largestSubArrayLength = Integer.MIN_VALUE;
 
-		for (int i = 1; i < A.size(); i++) {
+		HashMap<Integer, Pair> map = new HashMap<>();
 
+		int countZero = 0;
+		int countOne = 0;
+
+		for (int i = 0; i < A.length; i++) {
+
+			if (A[i] == 0)
+				countZero++;
+			else
+				countOne++;
+
+			map.put(i, new Pair(countZero, countOne));
 		}
 
-		return 0;
+		for (int i : map.keySet()) {
+			int count = 0;
+			Pair pair = map.get(i);
+			if (pair.first != 0 && pair.second != 0)
+				count = (pair.first < pair.second ? pair.first : pair.second);
+
+			largestSubArrayLength = count < largestSubArrayLength ? largestSubArrayLength : count;
+			System.out.println(i + " " + pair + " " + largestSubArrayLength);
+		}
+//		System.out.println(map.toString());
+		return 2 * largestSubArrayLength;
 	}
 
 	public int solve(String A, String B) {
@@ -61,4 +85,20 @@ public class ContiguousArray {
 		return list;
 	}
 
+}
+
+class Pair {
+
+	public int first;
+	public int second;
+
+	public Pair(int first, int second) {
+		this.first = first;
+		this.second = second;
+	}
+
+	@Override
+	public String toString() {
+		return "F" + first + "+S" + second;
+	}
 }

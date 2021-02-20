@@ -9,54 +9,24 @@ public class ContiguousArray {
 	}
 
 	public int solve(int[] A) {
-		int largestSubArrayLength = Integer.MIN_VALUE;
-		HashMap<Integer, Pair> map = new HashMap<>();
-		int countZero = 0;
-		int countOne = 0;
-		for (int i = 0; i < A.length; i++) {
-			if (A[i] == 0)
-				countZero++;
-			else
-				countOne++;
-			map.put(i, new Pair(countZero, countOne));
+		int sum = 0;
+		int maxsize = -1;
+		int n = A.length;
+
+		for (int i = 0; i < n - 1; i++) {
+			sum = (A[i] == 0) ? -1 : 1;
+			for (int j = i + 1; j < n; j++) {
+				if (A[j] == 0)
+					sum += -1;
+				else
+					sum += 1;
+
+				if (sum == 0 && maxsize < j - i + 1)
+					maxsize = j - i + 1;
+			}
 		}
-		System.out.println(map.toString());
-		int previousCount = 0;
-		for (int i : map.keySet()) {
-			int count = 0;
-			Pair pair = map.get(i);
-			if (pair.first != 0 && pair.second != 0)
-				count = 2 * (pair.first <= pair.second ? pair.first : pair.second);
-			if (previousCount == count)
-				count = previousCount;
-			largestSubArrayLength = count < largestSubArrayLength ? largestSubArrayLength : count;
-			count = previousCount;
-		}
-		return largestSubArrayLength;
+
+		return maxsize;
 	}
 
-}
-
-//class Pair {
-//
-//	public int first;
-//	public int second;
-//
-//	public Pair(int first, int second) {
-//		this.first = first;
-//		this.second = second;
-//	}
-//}
-
-class MyClass {
-	public static void main(String args[]) {
-		Integer x = 10;
-		printA(x);
-		System.out.println("X in Main after print " + x);
-	}
-
-	static void printA(Integer x) {
-		x = 6;
-		System.out.println("X in print " + x);
-	}
 }

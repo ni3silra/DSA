@@ -1,49 +1,42 @@
 package com.problemsolving.sorting;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.TreeSet;
 
 public class MinimizeDifference {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		ArrayList<Integer> list = new ArrayList<>();
+
+		for (int i : new int[] { 4, 6, 3, 1, 4 })
+			list.add(i);
+
+		System.out.println(new MinimizeDifference().solve(list, 5));
 	}
 
 	public int solve(ArrayList<Integer> A, int B) {
 
-		int min = Integer.MAX_VALUE;
-		int max = Integer.MIN_VALUE;
-		int totalSum = 0;
+		int num = -1;
+		int j = A.size() - 1;
 
-		for (int i : A) {
-			if (min > i)
-				min = i;
-			else if (max < i)
-				max = i;
-			totalSum += i;
+		while (B > 0) {
+			Collections.sort(A);
+			if (B % 2 == 0) {
+				num = A.get(0);
+				A.remove(0);
+				A.add(++num);
+			} else {
+				num = A.get(j);
+				A.remove(j);
+				A.add(--num);
+			}
+//			System.out.println(B + " Steps :- " + A.toString());
+			B--;
 		}
-
-		if (totalSum < B)
-			return 0;
-
-		if (max - min <= B)
-			return max - min;
-
-		int avg = (max + min) / 2;
-
-		for (int i = 0; i < B; i++)
-			if (A.get(i) > avg)
-				A.set(i, A.get(i) - B);
-			else
-				A.set(i, A.get(i) + B);
-
-		for (int i : A)
-			if (min > i)
-				min = i;
-			else if (max < i)
-				max = i;
-
-		return max - min;
+		Collections.sort(A);
+		return A.get(j) - A.get(0);
 	}
 
 }

@@ -10,7 +10,6 @@ public class LargestNumber {
 	}
 
 	public String largestNumber(final List<Integer> A) {
-
 		List<String> list = new ArrayList<String>();
 
 		for (int i : A)
@@ -22,20 +21,17 @@ public class LargestNumber {
 		for (String s : list)
 			sb.append(s);
 
-		if (Integer.parseInt(sb.toString()) == 0) {
-			sb = new StringBuffer("0");
-		}
-
+		if (sb.length() < 10)
+			if (Long.parseLong(sb.toString()) == 0L) {
+				sb = new StringBuffer("0");
+			}
 		return sb.toString();
 	}
-
 }
 
 class MyCompare implements Comparator<String> {
-
 	@Override
 	public int compare(String X, String Y) {
 		return (X + Y).compareTo(Y + X) > 0 ? -1 : 1;
 	}
-
 }
