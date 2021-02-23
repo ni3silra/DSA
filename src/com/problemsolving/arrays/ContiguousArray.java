@@ -47,7 +47,7 @@ public class ContiguousArray {
 			largestSubArrayLength = count < largestSubArrayLength ? largestSubArrayLength : count;
 			System.out.println(i + " " + pair + " " + largestSubArrayLength);
 		}
-//		System.out.println(map.toString());
+
 		return 2 * largestSubArrayLength;
 	}
 

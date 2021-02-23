@@ -21,18 +21,17 @@ public class MinimizeDifference {
 		int num = -1;
 		int j = A.size() - 1;
 
-		while (B > 0) {
+		while (B / 2 > 0) {
 			Collections.sort(A);
-			if (B % 2 == 0) {
-				num = A.get(0);
-				A.remove(0);
-				A.add(++num);
-			} else {
-				num = A.get(j);
-				A.remove(j);
-				A.add(--num);
-			}
-//			System.out.println(B + " Steps :- " + A.toString());
+
+			num = A.get(0);
+			A.remove(0);
+			A.add(++num);
+
+			num = A.get(j);
+			A.remove(j);
+			A.add(--num);
+
 			B--;
 		}
 		Collections.sort(A);

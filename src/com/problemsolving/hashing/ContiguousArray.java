@@ -5,28 +5,55 @@ import java.util.HashMap;
 public class ContiguousArray {
 
 	public static void main(String[] args) {
-		System.out.println(new ContiguousArray().solve(new int[] { 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1 }));
+		System.out.println(new ContiguousArray().solve(new int[] { 1, 0, 1, 0 }));
 	}
 
 	public int solve(int[] A) {
-		int sum = 0;
-		int maxsize = -1;
-		int n = A.length;
+		int ans = Integer.MIN_VALUE;
 
-		for (int i = 0; i < n - 1; i++) {
-			sum = (A[i] == 0) ? -1 : 1;
-			for (int j = i + 1; j < n; j++) {
-				if (A[j] == 0)
-					sum += -1;
-				else
-					sum += 1;
+		HashMap<Integer, Integer> map = new HashMap<>();
 
-				if (sum == 0 && maxsize < j - i + 1)
-					maxsize = j - i + 1;
+		int countZero = 0;
+		int countOne = 0;
+		map.put(0, -1);
+		for (int i = 0; i < A.length; i++) {
+
+			if (A[i] == 0)
+				countZero++;
+			else
+				countOne++;
+
+			int diff = countOne - countZero;
+
+			if (map.get(diff) != null) {
+				int newDiff = i - map.get(diff);
+				if (newDiff > ans)
+					ans = newDiff;
+			} else {
+				map.put(diff, i);
 			}
+
 		}
 
-		return maxsize;
+		return ans;
 	}
 
+}
+
+class Pair2 {
+
+	public int diff;
+	public int first;
+	public int second;
+
+	public Pair2(int diff, int first, int second) {
+		this.first = first;
+		this.second = second;
+		this.diff = diff;
+	}
+
+	@Override
+	public String toString() {
+		return "F:" + first + " S:" + second + " D:" + diff;
+	}
 }
