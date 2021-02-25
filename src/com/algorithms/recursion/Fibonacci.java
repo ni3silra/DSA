@@ -17,13 +17,10 @@ public class Fibonacci {
 		return fibonacci;
 	} // O(n)
 
-	int getFibonacciSeriesByRecursion(int occurance) {
-
-		if (occurance < 2)
-			return occurance;
-		else
-			return getFibonacciSeriesByRecursion(--occurance) + getFibonacciSeriesByRecursion(--occurance);
-
+	int fib(int n) {
+		if (n < 2)
+			return n;
+		return fib(--n) + fib(--n);
 	} // O(2^n)
 
 	public static void main(String[] args) {
@@ -32,7 +29,7 @@ public class Fibonacci {
 		for (int i : fibonacci.getFibonacciSeriesByItration(100))
 			System.out.print(i + ", ");
 		System.out.println("\nEnd Iterative :");
-		System.out.println(fibonacci.getFibonacciSeriesByRecursion(100));
+		System.out.println(fibonacci.fib(100));
 	}
 
 }

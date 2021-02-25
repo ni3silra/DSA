@@ -4,12 +4,12 @@ public class ReverseString {
 
 	public static final String EM = "";
 
-	String reverseStringByRecursion(String string) {
+	String reverse(String string) {
 
-		if (string.equals(EM))
-			return string;
+		if (string.equals(""))
+			return "";
 		else
-			return reverseStringByRecursion(string.substring(1)) + string.charAt(0);
+			return reverse(string.substring(1)) + string.charAt(0);
 
 	} // O(n)
 
@@ -28,7 +28,7 @@ public class ReverseString {
 
 		for (char out : reverseString.reverseStringByIteration("OyoY"))
 			System.out.print(out);
-		System.out.println("\n" + reverseString.reverseStringByRecursion("YoYo"));
+		System.out.println("\n" + reverseString.reverse("YoYo"));
 	}
 
 }

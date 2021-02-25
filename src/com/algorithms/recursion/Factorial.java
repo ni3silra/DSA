@@ -12,13 +12,12 @@ public class Factorial {
 		if (number == 0)
 			return 1;
 
-		calculations++;
 		return number * getFactorialFromRecursion(--number);
 	} // O(n)
 
 	long getFactorialFromIteration(int number) {
 		long factorial = 1;
-
+		calculations++;
 		if (number < 0) {
 			System.out.println("Please Enter non Negative Number");
 			return 0;
