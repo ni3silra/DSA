@@ -44,4 +44,18 @@ public class ReverseInteger {
 		return Number;
 	}
 
+	public int reverse2(int A) {
+
+		int reverse = 0;
+		try {
+			while (A != 0) {
+				int rem = A % 10;
+				reverse = Math.addExact(reverse * 10, rem);
+				A /= 10;
+			}
+		} catch (ArithmeticException e) {
+			return 0;
+		}
+		return reverse;
+	}
 }

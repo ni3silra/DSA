@@ -20,9 +20,7 @@ public class CommonElement {
 		ArrayList<Integer> B = new ArrayList<>();
 		for (int i : b1)
 			B.add(i);
-
 		System.out.println(new CommonElement().solve(A, B));
-
 	}
 
 	public ArrayList<Integer> solve(ArrayList<Integer> A, ArrayList<Integer> B) {
