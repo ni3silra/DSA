@@ -5,39 +5,31 @@ import java.util.ArrayList;
 public class PascalTriangle {
 
 	public static void main(String[] args) {
-		System.out.println(new PascalTriangle().solve(5));
+		System.out.println(new PascalTriangle().generate(5));
 	}
 
-	public ArrayList<ArrayList<Integer>> solve(int A) {
-		ArrayList<ArrayList<Integer>> table = new ArrayList<ArrayList<Integer>>();
+	public ArrayList<Integer> generate(int A) {
+		int numRows = A + 1;
+		ArrayList<ArrayList<Integer>> res = new ArrayList<>();
 
-		if (A == 0) {
-			return null;
+		res.add(new ArrayList<>());
+		res.get(0).add(1);
+
+		for (int i = 1; i < numRows; i++) {
+
+			res.add(new ArrayList<>());
+
+			res.get(i).add(1);
+
+			for (int j = 0; j < i - 1; j++) {
+				int num = res.get(i - 1).get(j) + res.get(i - 1).get(j + 1);
+				res.get(i).add(num);
+			}
+
+			res.get(i).add(1);
+
 		}
 
-		while (table.size() <= A - 1)
-			table.add(new ArrayList<>());
-		int start = 0;
-		for (int line = 0; line < A; line++) {
-			for (int i = 0; i <= line; i++) 
-				table.get(start).add(binomialCoeff(line, i));
-			start++;
-		}
-
-		return table;
+		return res.get(res.size() - 1);
 	}
-
-	static int binomialCoeff(int n, int k) {
-		int res = 1;
-
-		if (k > n - k)
-			k = n - k;
-
-		for (int i = 0; i < k; ++i) {
-			res *= (n - i);
-			res /= (i + 1);
-		}
-		return res;
-	}
-
 }
