@@ -16,24 +16,27 @@ public class KthSmallestElement {
 	}
 
 	public static int kthsmallest(final int[] A, int B) {
-
-		for (int i = A.length - 1; i >= 0; i--)
-			for (int j = i; j >= B; j--)
-				if (A[i] > A[j]) {
-					int temp = A[i];
-					A[i] = A[j];
-					A[j] = temp;
+		for (int i = 0; i < B; i++) {
+			int minn = Integer.MAX_VALUE, idx = 0;
+			for (int j = i; j < A.length; j++) {
+				if (A[j] < minn) {
+					minn = A[j];
+					idx = j;
 				}
+			}
 
-		System.out.println(Arrays.toString(A));
+			int tmp = A[i];
+			A[i] = A[idx];
+			A[idx] = tmp;
+		}
 
-		return A[A.length - B - 1];
+		return A[B - 1];
 	}
 
 	public static int kthsmallest1(int[] A, int B) {
 
 		Arrays.sort(A);
-		System.out.println(Arrays.toString(A));
+
 		return A[B - 1];
 	}
 

@@ -10,7 +10,7 @@ public class UniqueElement {
 	}
 
 	public int solve(int[] A) {
-		int steps = 0, i = 1, j = 0;
+		int steps = 0, i = 0, j = 0;
 		Arrays.sort(A);
 		while (j < A.length) {
 			if (i >= A[j]) {
