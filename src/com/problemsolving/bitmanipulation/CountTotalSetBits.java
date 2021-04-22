@@ -4,6 +4,7 @@ public class CountTotalSetBits {
 
 	public static void main(String[] args) {
 		System.out.println(new CountTotalSetBits().solve(4));
+		System.out.println(new CountTotalSetBits().solve2(7));
 	}
 
 	public int solve(int A) {
@@ -26,6 +27,30 @@ public class CountTotalSetBits {
 		}
 
 		return cnt % 1000000007;
+	}
+
+	public int solve2(int A) {
+		int cnt = 0;
+//		while (A != 0) {
+//			cnt++;
+//			A = A & (A - 1);
+//		}
+
+//		cnt = 0;
+
+//		for (int i = 0; i < 32; i++) {
+//			if (((A >> i) & 1) == 1)
+//				cnt++;
+//		}
+
+		// cnt = 0;
+
+		for (int i = 0; i < 32; i++) {
+			if ((A & (1 << i)) == 1)
+				cnt++;
+		}
+
+		return cnt;
 	}
 
 }

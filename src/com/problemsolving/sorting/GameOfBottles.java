@@ -34,6 +34,7 @@ public class GameOfBottles {
 				}
 			count++;
 		}
+		
 		System.out.println(map.toString());
 //
 //		for (int i = 0; i < n - 1; i++) {

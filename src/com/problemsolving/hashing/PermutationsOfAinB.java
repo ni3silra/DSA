@@ -23,14 +23,14 @@ public class PermutationsOfAinB {
 		char[] countTW = new char[MAX];
 
 		for (int i = 0; i < M; i++) {
-			(countP[B.charAt(i)])++;
-			(countTW[A.charAt(i)])++;
+			countP[B.charAt(i)]++;
+			countTW[A.charAt(i)]++;
 		}
 
 		for (int i = M; i < N; i++) {
 			if (compare(countP, countTW))
 				count++;
-			(countTW[A.charAt(i)])++;
+			countTW[A.charAt(i)]++;
 			countTW[A.charAt(i - M)]--;
 		}
 

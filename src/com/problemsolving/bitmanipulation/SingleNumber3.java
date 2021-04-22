@@ -13,6 +13,7 @@ public class SingleNumber3 {
 		int xor = 0;
 		for (int i : A)
 			xor = xor ^ i;
+		
 		int a = 0, b = 0;
 		int mask = (xor & (xor - 1)) ^ xor;
 
