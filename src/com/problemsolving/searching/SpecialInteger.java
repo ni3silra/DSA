@@ -15,17 +15,15 @@ public class SpecialInteger {
 
 		for (int i = 1; i < A.length; i++)
 			prefixSum[i] = prefixSum[i - 1] + A[i];
-		System.out.println(Arrays.toString(prefixSum));
+		// System.out.println(Arrays.toString(prefixSum));
 		int k = 1;
 
-		while (k < A.length) {
-			for (int i = 0; i < k; i++) {
-				int num = prefixSum[i + k] - prefixSum[i];
-				if (num <= B) {
-					k++;
-				} else {
-					return k;
-				}
+		for (int i = 0; i < k - 1; i++) {
+			int num = prefixSum[i + k] - prefixSum[i];
+			if (num <= B) {
+				continue;
+			} else {
+				k--;
 			}
 		}
 
