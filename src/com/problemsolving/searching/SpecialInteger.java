@@ -1,6 +1,5 @@
-package com.problemsolving.searching;
 
-import java.util.Arrays;
+package com.problemsolving.searching;
 
 public class SpecialInteger {
 
@@ -9,25 +8,20 @@ public class SpecialInteger {
 	}
 
 	public int solve(int[] A, int B) {
-		int[] prefixSum = new int[A.length];
+		int n = A.length;
+		int[] prefixSum = new int[n];
 
 		prefixSum[0] = A[0];
 
-		for (int i = 1; i < A.length; i++)
+		for (int i = 1; i < n; i++)
 			prefixSum[i] = prefixSum[i - 1] + A[i];
 		// System.out.println(Arrays.toString(prefixSum));
-		int k = 1;
 
-		for (int i = 0; i < k - 1; i++) {
-			int num = prefixSum[i + k] - prefixSum[i];
-			if (num <= B) {
-				continue;
-			} else {
-				k--;
-			}
+		for (int i = 0; i < n; i++) {
+			
 		}
 
-		return k;
+		return 0;
 	}
 
 }
