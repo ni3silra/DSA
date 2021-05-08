@@ -16,7 +16,7 @@ public class BinarySearch implements Search {
 	public boolean find(Object obj) {
 		array = new BubbleSort(array).sort();
 		int index = binarySearch(obj, 0, array.length - 1);
-	//	boolean found = binarySearch(obj);
+		// boolean found = binarySearch(obj);
 
 		if (index != -1)
 			return true;
@@ -43,22 +43,18 @@ public class BinarySearch implements Search {
 
 	// iterative
 	private boolean binarySearch(Object obj) {
-
 		int left = 0;
 		int right = array.length - 1;
 
 		while (left <= right) {
 			int mid = (left + right) / 2;
-
 			int decider = Utilites.compareTo(array[mid], obj);
-
 			if (decider == 0)
 				return true;
 			else if (decider == 1)
 				right = mid - 1;
-			else {
+			else
 				left = mid + 1;
-			}
 		}
 
 		return false;

@@ -1,36 +1,23 @@
-package com.algorithms.searching;
+package com.problemsolving.string;
 
 import java.util.*;
 
-public class ZAlgorithm {
+public class PeriodOfaString {
 
 	public static void main(String[] args) {
-		String text = "aaabcxyzaaaabczaaczabbaaaaaabc";
-		String pattern = "aaabc";
-		ZAlgorithm zAlgorithm = new ZAlgorithm();
-		List<Integer> result = zAlgorithm.matchPattern(text.toCharArray(), pattern.toCharArray());
-		result.forEach(System.out::println);
+		System.out.println(new PeriodOfaString().solve("aaaaaa"));
+		System.out.println(new PeriodOfaString().solve("ababab"));
 	}
 
-	public List<Integer> matchPattern(char[] text, char[] pattern) {
-		char[] newString = new char[text.length + pattern.length + 1];
-		List<Integer> result = new ArrayList<>();
-		int i = 0;
-
-		for (char ch : pattern)
-			newString[i++] = ch;
-
-		newString[i++] = '$';
-
-		for (char ch : text)
-			newString[i++] = ch;
-
-		int[] zarray = calculateZ(newString);
-		
-		for (i = 0; i < zarray.length; i++)
-			if (zarray[i] == pattern.length)
-				result.add(i - pattern.length - 1);
-		return result;
+	public int solve(String A) {
+		int[] zArray = calculateZ(A.toCharArray());
+		int counter = 0;
+		for (int i : zArray) {
+			if (i == A.length() - counter)
+				break;
+			counter++;
+		}
+		return counter;
 	}
 
 	public int[] calculateZ(char[] input) {
