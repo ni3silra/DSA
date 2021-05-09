@@ -8,19 +8,9 @@ public class MergeTwoSortedLists {
 	}
 
 	public ListNode mergeTwoLists(ListNode A, ListNode B) {
-		/*
-		 * a dummy first node to hang the result on
-		 */
 		ListNode dummyNode = new ListNode(0);
-		/*
-		 * tail points to the last result node
-		 */
 		ListNode tail = dummyNode;
 		while (true) {
-
-			/*
-			 * if either list runs out, use the other list
-			 */
 			if (A == null) {
 				tail.next = B;
 				break;
@@ -37,8 +27,6 @@ public class MergeTwoSortedLists {
 				tail.next = B;
 				B = B.next;
 			}
-
-			/* Advance the tail */
 			tail = tail.next;
 		}
 		return dummyNode.next;
