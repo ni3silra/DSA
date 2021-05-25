@@ -17,7 +17,6 @@ public class SubSetWithoutDup {
 		for (ArrayList<Integer> l : subsets(A))
 			if (set.add(l))
 				ans.add(l);
-
 		return ans;
 	}
 
