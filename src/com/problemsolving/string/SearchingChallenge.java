@@ -21,10 +21,10 @@ public class SearchingChallenge {
 				return FALSE;
 		}
 
-		int lastChar = A.toCharArray()[0];
+		int lastChar = A.toCharArray()[length - 1];
 		if (lastChar == 95)
 			return FALSE;
-		
+
 		return TRUE;
 	}
 
