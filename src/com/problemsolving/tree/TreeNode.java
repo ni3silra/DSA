@@ -12,7 +12,26 @@ public class TreeNode {
 	}
 
 	public static TreeNode createTree(int[] arr) {
-		
-		return null;
+		TreeNode root = new TreeNode(arr[0]);
+
+		return root;
 	}
+}
+
+class TreeInfo {
+	int size;
+	int miniElement;
+	int maxiElement;
+	int maxBSTSize;
+	boolean isBST;
+
+	public TreeInfo(int size, int miniElement, int maxiElement, int maxBSTSize, boolean isBST) {
+		super();
+		this.size = size;
+		this.miniElement = miniElement;
+		this.maxiElement = maxiElement;
+		this.maxBSTSize = maxBSTSize;
+		this.isBST = isBST;
+	}
+
 }
