@@ -8,9 +8,10 @@ public class UniquePath {
 
 	public int uniquePaths(int A, int B) {
 		long ans = 1;
-		for (int i = Math.max(B, A); i < (A + B - 1); i++) {
+		int num = Math.max(B, A);
+		for (int i = num; i < (A + B - 1); i++) {
 			ans *= i;
-			ans /= (i - Math.max(B, A) + 1);
+			ans /= (i - num + 1);
 		}
 		return (int) ans;
 	}

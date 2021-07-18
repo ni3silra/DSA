@@ -29,7 +29,7 @@ public class Fibonacci {
 		for (int i : fibonacci.getFibonacciSeriesByItration(100))
 			System.out.print(i + ", ");
 		System.out.println("\nEnd Iterative :");
-		System.out.println(fibonacci.fib(100));
+		System.out.println(fibonacci.fib(23));
 	}
 
 }

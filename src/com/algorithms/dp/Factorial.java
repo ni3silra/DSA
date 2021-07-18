@@ -28,7 +28,7 @@ public class Factorial {
 
 	public static void main(String[] args) {
 		Factorial factorial = new Factorial();
-		System.out.println("Recusive Output " + factorial.getFactorialFromDP(5));
+		System.out.println("Recusive Output " + factorial.getFactorialFromDP(23));
 		System.out.println(calculations);
 	}
 

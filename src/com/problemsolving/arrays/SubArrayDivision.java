@@ -13,7 +13,7 @@ public class SubArrayDivision {
 		s.add(1);
 		s.add(3);
 		s.add(2);
-
+	
 		birthday(s, 3, 2);
 //		System.out.println(birthday(s, 3, 2));
 

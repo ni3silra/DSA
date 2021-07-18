@@ -7,7 +7,18 @@ public class NumberOf1Bits {
 
 	}
 
-	public int numSetBits(long a) {
+	public int numSetBits(long A) {
+		int count = 0;
+		while (A > 0) {
+			if (((A & 1) == 1)) {
+				count++;
+			}
+			A >>= 1;
+		}
+		return count;
+	}
+
+	public int numSetBits1(long a) {
 		int noOf1Bit = 0;
 
 		for (int i : toBinary(a)) {

@@ -1,28 +1,32 @@
 package com.problemsolving.tree;
 
 public class LargestBSTSubtree {
-
-	public int solve(TreeNode A) {
-		return getTreeInfo(A).maxBSTSize;
+	public int largestBSTSubtree(TreeNode root) {
+		return isBST(root).size;
 	}
 
-	public TreeInfo getTreeInfo(TreeNode A) {
-		if (A == null)
-			return new TreeInfo(0, Integer.MAX_VALUE, Integer.MIN_VALUE, 0, true);
+	Node isBST(TreeNode root) {
+		Node node = new Node();
 
-		TreeInfo leftTreeInfo = getTreeInfo(A.left);
-		TreeInfo rightTreeInfo = getTreeInfo(A.right);
+		if (root == null)
+			return node;
 
-		if (leftTreeInfo.isBST && rightTreeInfo.isBST) {
-			if (leftTreeInfo.maxiElement < A.val && rightTreeInfo.miniElement > A.val) {
-				return new TreeInfo(1 + Math.max(leftTreeInfo.size, rightTreeInfo.size),
-						Math.min(Math.min(A.val, leftTreeInfo.miniElement), rightTreeInfo.miniElement),
-						Math.max(Math.max(A.val, leftTreeInfo.maxiElement), rightTreeInfo.maxiElement),
-						1 + Math.max(leftTreeInfo.size, rightTreeInfo.size), true);
-			}
+		Node l = isBST(root.left);
+		Node r = isBST(root.right);
+
+		node.left = Math.min(l.left, root.val);
+		node.right = Math.max(r.right, root.val);
+
+		if (l.isBst && r.isBst && l.right <= root.val && r.left >= root.val) {
+			node.size = l.size + r.size + 1;
+			node.isBst = true;
+		} else {
+			node.size = Math.max(l.size, r.size);
+			node.isBst = false;
 		}
 
-		return new TreeInfo(0, Integer.MAX_VALUE, Integer.MIN_VALUE, 0, false);
+		return node;
 	}
 
 }
+

@@ -18,7 +18,7 @@ public class ValidSudoku {
 					if (!set.add("R" + i + A[i].charAt(j)) || !set.add("C" + j + A[i].charAt(j))) {
 						return 0;
 					}
-					if (!set.add("B" + ((i / 3) * 3 + (j / 3)) + A[i].charAt(j))) {
+					if (!set.add("B" + (i+ (j / 3)) + A[i].charAt(j))) {
 						return 0;
 					}
 				}
