@@ -14,8 +14,7 @@ public final class Arrays<E> {
 	}
 
 	public static Object[] delete(Object[] array, int index) {
-		Object[] tempArray = new Object[array.length];
-		tempArray = array;
+		Object[] tempArray = array;
 
 		int newLength = array.length - 1;
 		array = new Object[newLength];

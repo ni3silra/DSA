@@ -31,9 +31,10 @@ public class Factorial {
 
 	public static void main(String[] args) {
 		Factorial factorial = new Factorial();
-		System.out.println("Recusive Output  " + factorial.getFactorialFromRecursion(50));
+		System.out.println("Recursive Output  " + factorial.getFactorialFromRecursion(50));
 		System.out.println("Iterative Output " + factorial.getFactorialFromIteration(0));
-		System.out.println("Calcualtions " + calculations);
+		System.out.println("Iterative Output " + factorial.getFactorialFromIteration(10));
+		System.out.println("Calculations " + calculations);
 	}
 
 }

@@ -11,7 +11,7 @@ public class AddTwoNumbersAsLists {
 	public ListNode addTwoNumbers(ListNode A, ListNode B) {
 		int sizeA = getSize(A);
 		int sizeB = getSize(B);
-		int size = sizeA > sizeB ? sizeA : sizeB;
+		int size = Math.max(sizeA, sizeB);
 
 		return null;
 	}
