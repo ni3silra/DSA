@@ -42,9 +42,9 @@ public class AddOneToNumber {
 		if (isCarryAvailable) {
 			ans.add(0);
 			ans.set(0, 1);
-			for (int i = 1; i < ans.size() - 1; i++) {
+			for (int i = 1; i < ans.size() - 1; i++)
 				ans.set(i, ans.get(i + 1));
-			}
+
 		} else {  
 			for (int i = 0; i < ans.size(); i++) {
 				if (ans.get(0) == 0)

@@ -7,45 +7,24 @@ public class ReverseInteger {
 	}// 2147483648
 
 	public int reverse(int A) {
-
-		boolean sign = A < 0 ? true : false;
-
-		if (sign)
-			A = A * (-1);
-
+		boolean sign = A < 0;
+		if (sign)  A *=-1;
 		int revA = reverseNum(A);
-		// System.out.println(revA + " " + reverseNum(revA));
-		// revA = reverseNum(revA) == A ? revA : 0;
-
-		if (sign)
-			revA = (-1) * revA;
-
+		if (sign) revA *=-1;
 		return revA;
-
 	}
 
 	int reverseNum(int A) {
-		int Number = 0;
-		System.out.println(Integer.MAX_VALUE);
+		long n = 0;
 		while (A > 0) {
-			System.out.println(Number);
-			if (Number >= Integer.MAX_VALUE / 10 && A % 10 > 7 && Number > 1000000000) {
-				return 0;
-			}
-
-			Number += A % 10;
-
+			n += A % 10;
 			A /= 10;
-
-			if (A > 0)
-				Number *= 10;
+			n *= 10;
 		}
-
-		return Number;
+		return (int) n;
 	}
 
 	public int reverse2(int A) {
-
 		int reverse = 0;
 		try {
 			while (A != 0) {

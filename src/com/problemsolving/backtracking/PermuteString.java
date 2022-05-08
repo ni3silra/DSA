@@ -3,7 +3,7 @@ package com.problemsolving.backtracking;
 public class PermuteString {
 
 	public static void main(String[] args) {
-		new PermuteString().permute("NITIN", 0, 4);
+		new PermuteString().permute("I AM GOOD", 0, 4);
 	}
 
 	public String swap(String a, int i, int j) {

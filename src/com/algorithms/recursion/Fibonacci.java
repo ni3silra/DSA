@@ -2,7 +2,7 @@ package com.algorithms.recursion;
 
 public class Fibonacci {
 
-	int[] getFibonacciSeriesByItration(int occurance) {
+	int[] getFibonacciSeriesByIteration(int occurance) {
 		int[] fibonacci = new int[occurance];
 
 		// base case
@@ -26,7 +26,7 @@ public class Fibonacci {
 	public static void main(String[] args) {
 		Fibonacci fibonacci = new Fibonacci();
 
-		for (int i : fibonacci.getFibonacciSeriesByItration(100))
+		for (int i : fibonacci.getFibonacciSeriesByIteration(100))
 			System.out.print(i + ", ");
 		System.out.println("\nEnd Iterative :");
 		System.out.println(fibonacci.fib(23));

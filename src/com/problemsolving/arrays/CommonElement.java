@@ -48,7 +48,7 @@ public class CommonElement {
 			if (map2.get(i) != null) {
 				int count1 = map1.get(i);
 				int count2 = map2.get(i);
-				int count = count1 < count2 ? count1 : count2;
+				int count = Math.min(count1, count2);
 				for (int j = 0; j < count; j++) {
 					output.add(i);
 				}

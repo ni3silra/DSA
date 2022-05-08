@@ -22,7 +22,7 @@ public class AdjacentValueSumIsEven {
 			else
 				oddCount++;
 
-		return evenCount < oddCount ? evenCount : oddCount;
+		return Math.min(evenCount, oddCount);
 	}
 
 }

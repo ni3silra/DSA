@@ -1,6 +1,6 @@
 package com.datastructure.tree;
 
-import com.utilites.Utilites;
+import com.utilites.Utilities;
 
 public class BinarySearchTree<E> implements Tree<E> {
 
@@ -28,7 +28,7 @@ public class BinarySearchTree<E> implements Tree<E> {
 		if (node.getValue() == null)
 			node = new TreeNode<E>(element);
 		else {
-			if (Utilites.compareTo(node.getValue(), element) == 1) {
+			if (Utilities.compareTo(node.getValue(), element) == 1) {
 				if (node.getLeftNode() == null)
 					node.setLeftNode(new TreeNode<>(element));
 				else

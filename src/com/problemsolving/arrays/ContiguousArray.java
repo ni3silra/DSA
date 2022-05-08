@@ -42,9 +42,9 @@ public class ContiguousArray {
 			int count = 0;
 			Pair pair = map.get(i);
 			if (pair.first != 0 && pair.second != 0)
-				count = (pair.first < pair.second ? pair.first : pair.second);
+				count = (Math.min(pair.first, pair.second));
 
-			largestSubArrayLength = count < largestSubArrayLength ? largestSubArrayLength : count;
+			largestSubArrayLength = Math.max(count, largestSubArrayLength);
 			System.out.println(i + " " + pair + " " + largestSubArrayLength);
 		}
 

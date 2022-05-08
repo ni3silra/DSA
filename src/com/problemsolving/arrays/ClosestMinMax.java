@@ -130,7 +130,7 @@ public class ClosestMinMax {
 				indexMax = i;
 			}
 			int newSmall = Math.abs(indexMax - indexMin) + 1;
-			smallestSubArrayLength = newSmall < smallestSubArrayLength ? newSmall : smallestSubArrayLength;
+			smallestSubArrayLength = Math.min(newSmall, smallestSubArrayLength);
 		}
 
 		return smallestSubArrayLength;

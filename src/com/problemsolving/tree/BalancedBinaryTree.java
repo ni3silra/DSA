@@ -3,7 +3,7 @@ package com.problemsolving.tree;
 public class BalancedBinaryTree {
 
 	public static void main(String[] args) {
-		System.out.println();
+		System.out.println(new BalancedBinaryTree().isBalanced(null));
 	}
 
 	public int isBalanced(TreeNode A) {
@@ -15,9 +15,17 @@ public class BalancedBinaryTree {
 			return new TreeInfo(-1, true);
 		TreeInfo left = isBalancedUtil(A.left);
 		TreeInfo right = isBalancedUtil(A.right);
-		boolean isBST = (left.size == right.size) && left.isBST && right.isBST;
+		boolean isBST = Math.abs(left.size - right.size) <=1 && left.isBST && right.isBST;
 		return new TreeInfo(Math.max(left.size, right.size) + 1, isBST);
 
 	}
+
+	public TreeInfo isBalanceUtil(){
+
+		// h(l) - h(r) != 2
+
+		return null;
+	}
+
 
 }

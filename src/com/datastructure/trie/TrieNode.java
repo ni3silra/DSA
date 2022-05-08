@@ -22,8 +22,7 @@ public class TrieNode {
 
 	public void insert(TrieNode node, String s) {
 		for (char c : s.toCharArray()) {
-			if (node.edge.get(c) == null)
-				node.edge.put(c, null);
+			node.edge.putIfAbsent(c, null);
 			node = node.edge.get(c);
 		}
 		node.isEnd = true;

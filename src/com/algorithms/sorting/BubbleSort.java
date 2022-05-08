@@ -1,6 +1,6 @@
 package com.algorithms.sorting;
 
-import com.utilites.Utilites;
+import com.utilites.Utilities;
 
 public class BubbleSort implements Sort {
 
@@ -15,7 +15,7 @@ public class BubbleSort implements Sort {
 	public Object[] sort() {
 		for (int j = 0; j < array.length; j++)
 			for (int i = 1; i < array.length - j; i++)
-				if (Utilites.compareTo(array[i - 1], array[i]) == 1)
+				if (Utilities.compareTo(array[i - 1], array[i]) == 1)
 					swap(i - 1, i);
 		return array;
 	}

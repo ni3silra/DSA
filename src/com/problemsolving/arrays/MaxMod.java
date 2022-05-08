@@ -36,7 +36,7 @@ public class MaxMod {
 		// keep the pointer at the end of the array
 		int i = n - 1;
 
-		// keep going backwards until we dont find a different element
+		// keep going backwards until we don't find a different element
 		while (flag == 0 && i != 0) {
 			if (A[i] == A[i - 1])
 				i--;

@@ -1,6 +1,6 @@
 package com.utilites;
 
-public class Utilites {
+public class Utilities {
 
 	public static int compareTo(Object o1, Object o2) {
 
@@ -8,15 +8,10 @@ public class Utilites {
 			return -2;
 
 		try {
-			Integer obj1 = Integer.parseInt(o1.toString());
-			Integer obj2 = Integer.parseInt(o2.toString());
+			int obj1 = Integer.parseInt(o1.toString());
+			int obj2 = Integer.parseInt(o2.toString());
 
-			if (obj1 == obj2)
-				return 0;
-			else if (obj1 > obj2)
-				return 1;
-			else
-				return -1;
+			return Integer.compare(obj1, obj2);
 
 		} catch (NumberFormatException e) {
 
@@ -36,8 +31,8 @@ public class Utilites {
 			return false;
 
 		try {
-			Integer obj1 = Integer.parseInt(o1.toString());
-			Integer obj2 = Integer.parseInt(o2.toString());
+			int obj1 = Integer.parseInt(o1.toString());
+			int obj2 = Integer.parseInt(o2.toString());
 			return obj1 == obj2;
 		} catch (NumberFormatException e) {
 			return (o1.toString().charAt(0) == o2.toString().charAt(0));

@@ -2,7 +2,7 @@ package com.algorithms.sorting;
 
 import java.util.Arrays;
 
-import com.utilites.Utilites;
+import com.utilites.Utilities;
 
 public class MergeSort implements Sort {
 
@@ -52,7 +52,7 @@ public class MergeSort implements Sort {
 		int k = startIndex;
 
 		while (i < n1 && j < n2) {
-			if (Utilites.compareTo(obj[i], obj[j]) == 1)
+			if (Utilities.compareTo(obj[i], obj[j]) == 1)
 				obj[k++] = a[i++];
 			else
 				obj[k++] = b[j++];

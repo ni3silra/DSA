@@ -1,5 +1,7 @@
 package com.problemsolving.arrays;
 
+import java.util.Arrays;
+
 public class MaxEvenSum {
 
 	public static void main(String[] args) {
@@ -8,17 +10,15 @@ public class MaxEvenSum {
 	}
 
 	public int findMaxEvenSum(int[] A) {
-		int sum = 0;
-
-		for (int i = 0; i < A.length; ++i) {
-			sum += A[i];
-		}
-
+		int sum = Arrays.stream(A).sum();
 		if (sum % 2 == 0) {
 			return sum;
 		}
 
 		int smallestOdd = 0;
+
+
+
 
 		for (int i = 0; i < A.length; ++i) {
 			if (A[i] % 2 == 1)

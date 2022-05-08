@@ -13,4 +13,17 @@ public class BuySellStock {
         return profit;
     }
 
+    public static int getProfit2(int[] array) {
+        int maxProfit = 0;
+        int minPrice = Integer.MAX_VALUE;
+
+        for (int currentPrice : array) {
+            if (currentPrice < minPrice)
+                minPrice = currentPrice;
+            else
+                maxProfit = Math.max(maxProfit, currentPrice - minPrice);
+        }
+        return maxProfit;
+    }
+
 }

@@ -1,7 +1,7 @@
 package com.algorithms.searching;
 
 import com.algorithms.sorting.BubbleSort;
-import com.utilites.Utilites;
+import com.utilites.Utilities;
 
 public class BinarySearch implements Search {
 
@@ -31,7 +31,7 @@ public class BinarySearch implements Search {
 
 		int midIndex = (startIndex + lastIndex) / 2;
 
-		int decider = Utilites.compareTo(array[midIndex], obj);
+		int decider = Utilities.compareTo(array[midIndex], obj);
 
 		if (decider == 0)
 			return midIndex;
@@ -48,7 +48,7 @@ public class BinarySearch implements Search {
 
 		while (left <= right) {
 			int mid = (left + right) / 2;
-			int decider = Utilites.compareTo(array[mid], obj);
+			int decider = Utilities.compareTo(array[mid], obj);
 			if (decider == 0)
 				return true;
 			else if (decider == 1)

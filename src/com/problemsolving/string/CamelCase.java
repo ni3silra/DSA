@@ -10,7 +10,7 @@ public class CamelCase {
 		int count = 1;
 
 		for (char c : s.toCharArray())
-			if (c >= 65 && c <= 90)
+			if (c >= 'A' && c <= 'Z')
 				count++;
 
 		return count;

@@ -12,7 +12,7 @@ public class TwoSum {
 	}
 
 	public int[] twoSum0(int[] nums, int target) {
-		int reqArray[] = null;
+		int[] reqArray = null;
 
 		for (int i = 0; i < nums.length; i++)
 			for (int j = 1; j < nums.length; j++)
@@ -23,7 +23,7 @@ public class TwoSum {
 	} // O(n^2)
 
 	public int[] twoSum1(int[] nums, int target) {
-		int reqArray[] = null;
+		int[] reqArray = null;
 
 		HashMap<Integer, Integer> values = new HashMap<Integer, Integer>();
 

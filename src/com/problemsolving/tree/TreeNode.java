@@ -11,10 +11,13 @@ public class TreeNode {
 		right = null;
 	}
 
-	public static TreeNode createTree(int[] arr) {
-		TreeNode root = new TreeNode(arr[0]);
+    public TreeNode(int val, TreeNode left, TreeNode right) {
+		this.val =val;
+		this.left = left;
+		this.right = right;
+    }
 
-		return root;
+	public TreeNode() {
 	}
 }
 

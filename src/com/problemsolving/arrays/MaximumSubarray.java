@@ -9,8 +9,8 @@ public class MaximumSubarray {
     }
 
     public int maxSubArray(int[] nums) {
-        int prefix[] = prefix(nums);
-        int suffix[] = suffix(nums);
+        int[] prefix = prefix(nums);
+        int[] suffix = suffix(nums);
         int max = Integer.MIN_VALUE;
 
         for(int i =0 ; i<nums.length;i++){
@@ -20,7 +20,7 @@ public class MaximumSubarray {
     }
 
     public int[] prefix(int[] nums){
-        int prefix[] = new int[nums.length];
+        int[] prefix = new int[nums.length];
         prefix[0] = nums[0];
         for(int i = 1;i<nums.length;i++){
             prefix[i] = prefix[i-1] + nums[i];
@@ -30,7 +30,7 @@ public class MaximumSubarray {
     }
 
     public int[] suffix(int[] nums){
-        int suffix[] = new int[nums.length];
+        int[] suffix = new int[nums.length];
         suffix[nums.length -1] = nums[nums.length -1];
         for(int i = nums.length -2;i>=0;i--){
             suffix[i] = suffix[i+1] + nums[i];
