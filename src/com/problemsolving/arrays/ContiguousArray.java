@@ -6,7 +6,7 @@ public class ContiguousArray {
 
 	public static void main(String[] args) {
 
-		ArrayList<Integer> A = new ArrayList<Integer>();
+		ArrayList<Integer> A = new ArrayList<>();
 
 		for (int i : new int[] { 1, 0, 1, 0, 1 })
 			A.add(i);

@@ -5,7 +5,7 @@ import java.util.*;
 public class PerfectNumbers {
 
 	public static void main(String[] args) {
-		System.out.println(new PerfectNumbers().solve(4));
+		System.out.println(new PerfectNumbers().solve(20));
 	}
 
 	public String solve(int A) {
@@ -15,7 +15,7 @@ public class PerfectNumbers {
 
 		int c = 0;
 		while (c < A) {
-			int num = queue.poll();
+			int num = queue.poll() == null ? 0 : queue.poll();
 			queue.add(10 * num + 1);
 			c++;
 			if (c == A)

@@ -110,17 +110,6 @@ public class ClosestMinMax {
 		int smallestSubArrayLength = min;
 
 		for (int i = 0; i < A.length; i++) {
-			if (A[i] < min) {
-				min = A[i];
-				indexMin = i;
-			}
-			if (A[i] > max) {
-				max = A[i];
-				indexMax = i;
-			}
-		}
-
-		for (int i = 0; i < A.length; i++) {
 			if (A[i] <= min) {
 				min = A[i];
 				indexMin = i;

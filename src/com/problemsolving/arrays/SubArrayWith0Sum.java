@@ -13,7 +13,7 @@ public class SubArrayWith0Sum {
 
 	public int solve(int[] A) {
 		HashSet<Long> set = new HashSet<>();
-		set.add((Long) 0L);
+		set.add(0L);
 		Long current_sum = 0L;
 		for (int i : A) {
 			current_sum += i;

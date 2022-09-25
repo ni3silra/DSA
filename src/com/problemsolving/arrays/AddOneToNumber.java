@@ -11,8 +11,34 @@ public class AddOneToNumber {
 		for (int i : a)
 			A.add(i);
 
-		System.out.println(new AddOneToNumber().plusOne(A));
+		System.out.println(new AddOneToNumber().plusOne2(A));
 
+	}
+
+
+	public ArrayList<Integer> plusOne2(ArrayList<Integer> A) {
+		removeIntialZero(A);
+		for(int i = A.size() -1 ; i >= 0 ; i--){
+			if(A.get(i) < 9){
+				A.set(i,A.get(i)+1);
+				return A;
+			}
+			A.set(i,0);
+		}
+
+		A.add(0,1);
+
+		return A;
+	}
+
+	public ArrayList<Integer> removeIntialZero(ArrayList<Integer> A){
+		int i = 0;
+		while(!A.isEmpty())
+			if(A.get(i++) == 0)
+				A.remove(0);
+			else
+				break;
+		return A;
 	}
 
 	public int[] plusOne(int[] digits){

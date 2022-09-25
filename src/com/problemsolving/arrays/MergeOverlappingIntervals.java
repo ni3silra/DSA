@@ -35,11 +35,34 @@ public class MergeOverlappingIntervals {
 	}
 
 	void sort(ArrayList<Interval> intervals) {
-		Collections.sort(intervals, new Comparator<Interval>() {
-			public int compare(Interval i1, Interval i2) {
-				return i1.start - i2.start;
+		Collections.sort(intervals, Comparator.comparingInt(i -> i.start));
+	}
+
+	public int[][] merge(int[][] intervals) {
+		if (intervals == null || intervals.length <= 1) return intervals;
+
+		// otherwise sort the interval on basis of start index using comparator.
+		Arrays.sort(intervals, Comparator.comparingInt(interval -> interval[0]));
+
+		List<int[]> outputList = new ArrayList<>();
+		int[] currInterval = intervals[0];
+		outputList.add(currInterval);
+
+		for (int[] intrvl : intervals) {
+			int currBegin = currInterval[0];
+			int currEnd = currInterval[1];
+			int nextBegin = intrvl[0];
+			int nextEnd = intrvl[1];
+
+			if (currEnd >= nextBegin) {
+				currInterval[1] = Math.max(currEnd, nextEnd);
+			} else {
+				currInterval = intrvl;
+				outputList.add(currInterval);
 			}
-		});
+		}
+
+		return outputList.toArray(new int[outputList.size()][]);
 	}
 
 }

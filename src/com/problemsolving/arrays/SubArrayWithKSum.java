@@ -18,9 +18,9 @@ public class SubArrayWithKSum {
 		long current_sum = 0;
 		for (int i = 0; i < A.length; i++) {
 			current_sum += A[i];
-			map.put((long) current_sum, (long) i);
-			if (map.get((long) (current_sum - B)) != null) {
-				startIndex = (int) (map.get((long) (current_sum - B)) + 1);
+			map.put(current_sum, (long) i);
+			if (map.get(current_sum - B) != null) {
+				startIndex = (int) (map.get(current_sum - B) + 1);
 				endIndex = i;
 				break;
 			} else if (map.get((long) B) != null) {
@@ -30,7 +30,7 @@ public class SubArrayWithKSum {
 			}
 		}
 
-		if (startIndex != -1 && endIndex != -1) {
+		if (startIndex != -1) {
 			int[] array = null;
 			int j = 0;
 

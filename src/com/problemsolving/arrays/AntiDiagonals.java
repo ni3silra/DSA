@@ -33,7 +33,7 @@ public class AntiDiagonals {
 		int start = 0;
 
 		while (output.size() < 2 * M - 1)
-			output.add(new ArrayList<Integer>());
+			output.add(new ArrayList<>());
 
 		for (int col = 0; col < N; col++) {
 			int startcol = col, startrow = 0;
